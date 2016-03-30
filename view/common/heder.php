@@ -9,11 +9,11 @@
 <meta http-equiv="Content-Script-Type" content="text/javascript" />
 <meta http-equiv="Content-Style-Type" content="text/css" />
 <meta http-equiv="imagetoolbar" content="no" />
-<link href="share/css/set/import.css" rel="stylesheet" type="text/css" media="all" />
-<link href="share/css/share.css" rel="stylesheet" type="text/css" media="all" />
-<link href="sample/css/index.css" rel="stylesheet" type="text/css" media="all" />
-<script type='text/javascript' src='share/js/jquery.js'></script>
-<script type='text/javascript' src='share/js/scroll.js'></script>
+<link href="/share/css/set/import.css" rel="stylesheet" type="text/css" media="all" />
+<link href="/share/css/share.css" rel="stylesheet" type="text/css" media="all" />
+<link href="/sample/css/index.css" rel="stylesheet" type="text/css" media="all" />
+<script type='text/javascript' src='/share/js/jquery.js'></script>
+<script type='text/javascript' src='/share/js/scroll.js'></script>
 </head>
 
 <body>
