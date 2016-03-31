@@ -22,10 +22,10 @@
 		<div id="header" class="clearfix">
 			<h1>CREATIVE SAMPLE.ltd</h1>
 			<ul id="gNavi">
-				<li><a href="index.html" title="">タカピー</a></li>
+				<li><a href="index.html" title="">MENU 6</a></li>
 				<li><a href="index.html" title="">MENU 5</a></li>
 				<li><a href="index.html" title="">MENU 4</a></li>
-				<li><a href="index.html" title="">MENU 3</a></li>
+				<li><a href="index.html" title="">問い合わせページ</a></li>
 				<li><a href="index.html" title="">事業内容</a></li>
 				<li><a href="company.html" title="">会社概要</a></li>
 				<li><a href="index.html" title="">TOP PAGE</a></li>
