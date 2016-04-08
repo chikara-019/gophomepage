@@ -1,4 +1,4 @@
-<?php 
+<?php
 
 function business_action(){
 
@@ -7,5 +7,6 @@ function business_action(){
     $data = $db->getTopics('id', 0, 4);
     $v['data'] = $data;
     return getView($path, $v);
+
 
 }
