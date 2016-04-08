@@ -13,7 +13,7 @@
 		} else {
 			
 		  //エラー処理
-		  die("error");
+		  die("テンプレートがありません。{$path}");
 		  
 		}
 		return $view;

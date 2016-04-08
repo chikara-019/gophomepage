@@ -1,6 +1,6 @@
 <?php
 
-function sample(){
+function sample_action(){
 
     $path = VIEW_DIR.SPR."sample.php";
     $db = new GopDb();

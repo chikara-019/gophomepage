@@ -4,15 +4,15 @@
 			<div class="wrapBox clearfix">
 				<div id="mainContents">
 
-					<a id="pageLink04" name="pageLink04"></a>
-					<p class="chapter8">新着ニュース</p>
-					<table class="tableDec3">
-                    <?php foreach($data as $d): ?>
+				<a id="pageLink04" name="pageLink04"></a>
+				<p class="chapter8">新着ニュース</p>
+				<table class="tableDec3">
+                <?php foreach($data as $d): ?>
 						<tr>
                         <th><?php echo $d['title']?></th>
                         <td>
 
-                          <?php echo date('Y年m月n日', strtotime($d['created_at'])) ?><br/>
+               <?php echo date('Y年m月n日', strtotime($d['created_at'])) ?><br/>
                           <?php echo $d['body']?>
                         </td>
 						</tr>
@@ -20,7 +20,7 @@
 					</table>
 					
 					
-				</div><!-- div#mainContents END -->
+				    </div><!-- div#mainContents END -->
 
                 <?php include "common/left.php" ?>
 

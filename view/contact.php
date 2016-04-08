@@ -5,7 +5,7 @@
 				<div id="mainContents">
 
 				<a id="pageLink04" name="pageLink04"></a>
-				<p class="chapter8">新着ニュース</p>
+				<p class="chapter8">問い合わせページ</p>
 				<table class="tableDec3">
                 <?php foreach($data as $d): ?>
 						<tr>
