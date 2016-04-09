@@ -16,6 +16,3 @@
 
    include(FUNCTION_DIR.SPR."global.php");
    include(FUNCTION_DIR.SPR."GopDb.php");
-
-
-  

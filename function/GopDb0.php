@@ -26,8 +26,9 @@ class GopDb {
     }
 
 
-    function getTopics($sort="created_at", $offset=0, $limit=5) {
-        $sql = 'select * from topics order by :sort limit :offset,:limit';
+    function getcompany($sort="created_at", $offset=0, $limit=5) {
+      var_dump($offset);
+        $sql = 'select * from company order by :sort limit :offset,:limit';
         $sth = $this->con->prepare($sql);
         $sth->bindParam(':sort',$sort);
         $sth->bindParam(':offset',$offset, PDO::PARAM_INT);

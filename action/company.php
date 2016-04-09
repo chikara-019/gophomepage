@@ -1,4 +1,4 @@
-<?php 
+<?php
 
 function company_action(){
 
