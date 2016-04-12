@@ -6,6 +6,7 @@ function  index_action(){
     $db = new GopDb();
     $data = $db->getTopics('id', 0, 4);
     $v['data'] = $data;
-    return getView($path, $v);
 
+    return getView($path, $v);
 }
+

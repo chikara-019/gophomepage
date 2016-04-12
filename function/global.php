@@ -6,7 +6,7 @@
 		if(is_file($path)){
 			extract($val,EXTR_OVERWRITE);
 			ob_start();
-			include $path;
+			include($path);
 			$view = ob_get_contents();
 			ob_end_clean();	
 				
