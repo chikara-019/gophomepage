@@ -26,7 +26,7 @@ class GopDb {
     }
 
 
-    function getTopics($sort="created_at", $offset=0, $limit=5) {
+     function getTopics($sort="created_at", $offset=0, $limit=5) {
         $sql = 'select * from topics order by :sort limit :offset,:limit';
         $sth = $this->con->prepare($sql);
         $sth->bindParam(':sort',$sort);
@@ -36,6 +36,24 @@ class GopDb {
         return $sth->fetchAll(PDO::FETCH_ASSOC);
     }
 
+    function getCompany() {
+         $sql = 'select * from company limit 1';
+         $sth = $this->con->prepare($sql);
+         $sth->execute();
+         return $sth->fetch(PDO::FETCH_ASSOC);
+   }
 
+    function getbusiness() {
+         $sql = 'select * from business limit 2';
+         $sth = $this->con->prepare($sql);
+         $sth->execute();
+         return $sth->fetch(PDO::FETCH_ASSOC);
+  }
 
+    function getcontact() {
+         $sql = 'select * from contact  limit 1';
+         $sth = $this->con->prepare($sql);
+         $sth->execute();
+         return $sth->fetch(PDO::FETCH_ASSOC);
+   }
 }

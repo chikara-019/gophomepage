@@ -4,8 +4,9 @@ function company_action(){
 
     $path = VIEW_DIR.SPR."company.php";
     $db = new GopDb();
-    $data = $db->getTopics('id', 0, 4);
+    $data = $db->getCompany();
     $v['data'] = $data;
-    return getView($path, $v);
+    return getView($path,$data);
+
 
 }

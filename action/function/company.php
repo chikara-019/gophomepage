@@ -26,7 +26,7 @@ class GopDb {
     }
 
 
-    function getcompany($sort="created_at", $offset=0, $limit=5) {
+    function getcompany($sort="created_at", $offset=0, $limit=7) {
       var_dump($sort);
         $sql = 'select * from company order by :sort limit :offset,:limit';
         $sth = $this->con->prepare($sql);

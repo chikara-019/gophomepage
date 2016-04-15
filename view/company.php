@@ -7,19 +7,13 @@
 				<a id="pageLink04" name="pageLink04"></a>
 				<p class="chapter8">会社概要</p>
 				<table class="tableDec3">
-                <?php foreach($data as $d): ?>
 						<tr>
-                        <th><?php echo $d['title']?></th>
-                        <td>
-
-               <?php echo date('Y年m月n日', strtotime($d['created_at'])) ?><br/>
-                          <?php echo $d['body']?>
-                        </td>
+                        <th>会社名</th>
+                        <td><?php echo $name ?></td>
 						</tr>
-                    <?php endforeach ?>
 					</table>
-					
-					
+
+
 				    </div><!-- div#mainContents END -->
 
                 <?php include "common/left.php" ?>
@@ -28,6 +22,3 @@
 		</div><!-- div#wrapBg END -->
 
 <?php include "common/footer.php" ?>
-
-				
-		
