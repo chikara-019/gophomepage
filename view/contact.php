@@ -9,11 +9,10 @@
 				<table class="tableDec3">
                  <tr>
                  <th>問い合わせ内容</th>
-								<th><?php echo $d['title']?></th>
+								  <td><?php echo $data['title']?></td>
                 <td>
 
-               <?php echo date('Y年m月n日', strtotime($d['created_at'])) ?><br/>
-                          <?php echo $d['body']?>
+
                         </td>
 						</tr>
 

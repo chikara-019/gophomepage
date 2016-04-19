@@ -5,19 +5,16 @@
 				<div id="mainContents">
 
 				<a id="pageLink04" name="pageLink04"></a>
-				<p class="chapter8">事業内容</p>
+		<p class="chapter8">事業</p>　　　
 				<table class="tableDec3">
-              <tr>
-							<th>事業名</th>
-						 <th><?php echo $d['title']?></th>
-						 <td>
 
-					  <?php echo date('Y年m月n日', strtotime($d['created_at'])) ?><br/>
-                     <?php echo $d['body']?>
-											 </td>
-					 </tr>
+							<tr>
+								<th>事業名</th>
+	              <td><?php echo  $data['name'];?></td>
 
-				 </table>
+							</tr>
+						</table>
+
 
 								</div><!-- div#mainContents END -->
 								<?php include "common/left.php" ?>

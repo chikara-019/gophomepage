@@ -18,8 +18,8 @@
 						</tr>
                     <?php endforeach ?>
 					</table>
-					
-					
+
+
 				    </div><!-- div#mainContents END -->
 
                 <?php include "common/left.php" ?>
@@ -28,6 +28,3 @@
 		</div><!-- div#wrapBg END -->
 
 <?php include "common/footer.php" ?>
-
-				
-		
