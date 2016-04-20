@@ -9,4 +9,5 @@ function company_action(){
     return getView($path,$data);
 
 
+
 }

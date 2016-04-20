@@ -4,12 +4,11 @@ function business_action(){
 
     $path = VIEW_DIR.SPR."business.php";
     $db = new GopDb();
-    $data = $db->getBusiness('id',2);
-    $data = $db->getBusinessContent();
-    var_dump($data);
+    $business = $db->getBusiness();
+    foreach ($business as $key => $val) {
+    $content  = $db->getBusinessContent($val['id']);
+
+    }
     $v['data'] = $data;
-    return getView($path, $v);
-
-
-
+    return getView($path,$v);
 }

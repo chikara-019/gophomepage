@@ -36,21 +36,22 @@ class GopDb {
         return $sth->fetchAll(PDO::FETCH_ASSOC);
     }
 
-    function getCompany() {
-         $sql = 'select * from company limit 1';
+    function getCompany(){
+         $sql = 'select * from company limit1 ';
          $sth = $this->con->prepare($sql);
          $sth->execute();
          return $sth->fetch(PDO::FETCH_ASSOC);
    }
 
-    function getBusiness($offset=0, $limit=2) {
-         $sql = 'select * from business order by :offset,:limit';
-         $sth = $this->con->prepare($sql);
-         $sth->bindParam(':offset',$offset, PDO::PARAM_INT);
-         $sth->bindParam(':limit',$limit, PDO::PARAM_INT);
-         $sth->execute();
-         return $sth->fetch(PDO::FETCH_ASSOC);
-  }
+    function getBusiness($sort="created_at", $offset=0, $limit=2) {
+       $sql = 'select * from business order by :sort limit :offset,:limit';
+       $sth = $this->con->prepare($sql);
+       $sth->bindParam(':sort',$sort);
+       $sth->bindParam(':offset',$offset, PDO::PARAM_INT);
+       $sth->bindParam(':limit',$limit, PDO::PARAM_INT);
+       $sth->execute();
+       return $sth->fetchAll(PDO::FETCH_ASSOC);
+   }
 
     function getContact() {
          $sql = 'select * from contact  limit 1';
@@ -59,13 +60,13 @@ class GopDb {
          return $sth->fetch(PDO::FETCH_ASSOC);
    }
 
-    function getBusinessContent($sort="created_at", $offset=0, $limit=2) {
-         $sql = 'select * from business_content order by :sort limit :offset,:limit ';
-         $sth = $this->con->prepare($sql);
-         $sth->bindParam(':sort',$sort);
-         $sth->bindParam(':offset',$offset, PDO::PARAM_INT);
-         $sth->bindParam(':limit',$limit, PDO::PARAM_INT);
-         $sth->execute();
-         return $sth->fetch(PDO::FETCH_ASSOC);
+   function getBusinessContent($sort="created_at", $offset=0, $limit=2) {
+     $sql = SELECT * FROM `business_content` WHERE 1
+     $sth = $this->con->prepare($sql);
+     $sth->bindParam(':sort',$sort);
+     $sth->bindParam(':offset',$offset, PDO::PARAM_INT);
+     $sth->bindParam(':limit',$limit, PDO::PARAM_INT);
+     $sth->execute();
+     return $sth->fetchAll(PDO::FETCH_ASSOC);
   }
 }

@@ -9,4 +9,3 @@ function sample_action(){
     return getView($path, $v);
 
 }
-

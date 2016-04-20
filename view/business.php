@@ -5,15 +5,19 @@
 				<div id="mainContents">
 
 				<a id="pageLink04" name="pageLink04"></a>
-		<p class="chapter8">事業</p>　　　
-				<table class="tableDec3">
+          <p class="chapter8">事業</p>
+　　　　　  <table class="tableDec3">
+              <?php foreach($data as $d): ?>
+           <tr>
+						      <th><?php echo $d[0][0] ?></th>
+							<td>
 
-							<tr>
-								<th>事業名</th>
-	              <td><?php echo  $data['name'];?></td>
 
-							</tr>
-						</table>
+                  <th><?php echo $d[1]?></th>
+							</td>
+	         </tr>
+					       <?php endforeach ?>
+          </table>
 
 
 								</div><!-- div#mainContents END -->

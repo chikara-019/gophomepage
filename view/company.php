@@ -10,6 +10,8 @@
 						<tr>
                         <th>会社名</th>
                         <td><?php echo $name ?></td>
+
+
 						</tr>
 					</table>
 
