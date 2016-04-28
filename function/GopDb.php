@@ -50,9 +50,8 @@ class GopDb {
    }
 
 
-   function getBusinessContent($business_id="business_id") {
-     var_dump($business_id);
-    $sql = 'select * from business_content  where business_id';
+   function getBusinessContent($business_id) {
+    $sql = 'select * from business_content  where ';
     $sth = $this->con->prepare($sql);
     $sth->bindParam(':business_id',$business_id);
     $sth->execute();
