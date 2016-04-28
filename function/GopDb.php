@@ -26,47 +26,36 @@ class GopDb {
     }
 
 
-     function getTopics($sort="created_at", $offset=0, $limit=5) {
-        $sql = 'select * from topics order by :sort limit :offset,:limit';
+     function getTopics($sort="created_at") {
+        $sql = 'select * from topics order by :sort ';
         $sth = $this->con->prepare($sql);
         $sth->bindParam(':sort',$sort);
-        $sth->bindParam(':offset',$offset, PDO::PARAM_INT);
-        $sth->bindParam(':limit',$limit, PDO::PARAM_INT);
         $sth->execute();
         return $sth->fetchAll(PDO::FETCH_ASSOC);
     }
 
-    function getCompany(){
-         $sql = 'select * from company limit1 ';
+    function getCompany($sort="created_at"){
+         $sql = 'select * from company order by :sort';
          $sth = $this->con->prepare($sql);
+         $sth->bindParam(':sort',$sort);
          $sth->execute();
          return $sth->fetch(PDO::FETCH_ASSOC);
    }
 
-    function getBusiness($sort="created_at", $offset=0, $limit=2) {
-       $sql = 'select * from business order by :sort limit :offset,:limit';
+    function getBusiness() {
+       $sql = 'select * from business ';
        $sth = $this->con->prepare($sql);
-       $sth->bindParam(':sort',$sort);
-       $sth->bindParam(':offset',$offset, PDO::PARAM_INT);
-       $sth->bindParam(':limit',$limit, PDO::PARAM_INT);
        $sth->execute();
        return $sth->fetchAll(PDO::FETCH_ASSOC);
    }
 
-    function getContact() {
-         $sql = 'select * from contact  limit 1';
-         $sth = $this->con->prepare($sql);
-         $sth->execute();
-         return $sth->fetch(PDO::FETCH_ASSOC);
-   }
 
-   function getBusinessContent($sort="created_at", $offset=0, $limit=2) {
-     $sql = SELECT * FROM `business_content` WHERE 1
-     $sth = $this->con->prepare($sql);
-     $sth->bindParam(':sort',$sort);
-     $sth->bindParam(':offset',$offset, PDO::PARAM_INT);
-     $sth->bindParam(':limit',$limit, PDO::PARAM_INT);
-     $sth->execute();
-     return $sth->fetchAll(PDO::FETCH_ASSOC);
+   function getBusinessContent($business_id="business_id") {
+     var_dump($business_id);
+    $sql = 'select * from business_content  where business_id';
+    $sth = $this->con->prepare($sql);
+    $sth->bindParam(':business_id',$business_id);
+    $sth->execute();
+    return $sth->fetchAll(PDO::FETCH_ASSOC);
   }
 }

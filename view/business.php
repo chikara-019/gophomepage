@@ -9,11 +9,11 @@
 　　　　　  <table class="tableDec3">
               <?php foreach($data as $d): ?>
            <tr>
-						      <th><?php echo $d[0][0] ?></th>
+						      <th><?php echo $d['name'] ?></th>
 							<td>
 
 
-                  <th><?php echo $d[1]?></th>
+                  <th><?php echo $d['content'] ?></th>
 							</td>
 	         </tr>
 					       <?php endforeach ?>

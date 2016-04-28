@@ -6,9 +6,10 @@ function business_action(){
     $db = new GopDb();
     $business = $db->getBusiness();
     foreach ($business as $key => $val) {
-    $content  = $db->getBusinessContent($val['id']);
-
+    $content = $db->getBusinessContent($val['id']);
+    $business[$key]['content']= $content;
     }
-    $v['data'] = $data;
+    $v['data'] = $business;
+    var_dump($v);
     return getView($path,$v);
 }

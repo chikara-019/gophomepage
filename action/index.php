@@ -7,6 +7,6 @@ function  index_action(){
     $data = $db->getTopics();
     $v['data'] = $data;
     return getView($path, $v);
-      var_dump($v);
+
 
 }
