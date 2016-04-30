@@ -5,24 +5,11 @@ function business_action(){
     $path = VIEW_DIR.SPR."business.php";
     $db = new GopDb();
     $business = $db->getBusiness();
+    $data = array();
     foreach ($business as $key => $val) {
-        $content = $db->getBusinessContent($val['id']);
-        $business[$key]['content']= $content;
+        $data[$key]['business'] = $val;
+        $data[$key]['content'] = $db->getBusinessContent($val['id']);
     }
-    $v['data'] = $business;
+    $v['data'] = $data;
     return getView($path, $v);
 }
-
-    foreach ($business as $kk => $vv){
-        echo $vv['name'];
-            foreach($vv as $k => $v){
-                if($k  == "content"){
-                    foreach($v as $d) {
-                        echo $d['content'];
-
-                    }
-                }
-            echo     "<br/>";
-            }
-
-    }

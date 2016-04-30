@@ -1,14 +1,14 @@
 <?php
 
-function business_action(){
+function hgoe_action(){
 
     $path = VIEW_DIR.SPR."business.php";
     $db = new GopDb();
     $business = $db->getBusiness();
     $data = array();
     foreach ($business as $key => $val) {
-        $data[$kye]['business'] = $val;
-        $data[$kye]'content'] = $db->getBusinessContent($val['id']);
+        $data[$key]['business'] = $val;
+        $data[$key]['content'] = $db->getBusinessContent($val['id']);
     }
    // var_dump($business);
 
@@ -19,7 +19,8 @@ function business_action(){
         }
         echo     "<br/>";
     }
+    exit;
 
-    $v['data'] = $business;
+    $v['data'] = $data;
     return getView($path, $v);
 }
