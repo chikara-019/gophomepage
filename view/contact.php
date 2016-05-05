@@ -1,29 +1,38 @@
 <?php include "common/heder.php" ?>
 
 <div id="wrapBg">
-			<div class="wrapBox clearfix">
-				<div id="mainContents">
-
-				<a id="pageLink04" name="pageLink04"></a>
-				<p class="chapter8">問い合わせページ</p>
-				<table class="tableDec3">
-                 <tr>
-                 <th>問い合わせ内容</th>
-								  <td><?php echo $data['title']?></td>
-                <td>
-
-
-                        </td>
-						</tr>
-
-					</table>
-
-
-				    </div><!-- div#mainContents END -->
-
-                <?php include "common/left.php" ?>
-
-			</div><!-- div#wrapBox END -->
-		</div><!-- div#wrapBg END -->
+   <div class="wrapBox clearfix">
+     <div id="mainContents">
+	  <p class="chapter8">問い合わせページ</p>
+      <?php if(isset($sucsess)):?>
+      <p class="sucsess"><?= $sucsess ?></p>
+      <?php endif?>
+      <form method="post" action="/contact">
+      <p>お名前</p>
+      <?php if(isset($error['name'])):?>
+      <p class="error"><?= $error['name'] ?></p>
+      <?php endif?>
+      <input type="text" name="contact[name]" value="<?=isset($name)?$name:null; ?>"/> 
+      <p>タイトル</p>
+      <?php if(isset($error['title'])):?>
+      <p class="error"><?= $error['title'] ?></p>
+      <?php endif?>
+      <input type="text" name="contact[title]" value="<?=isset($title)?$title:null; ?>"/> 
+      <p>返信メールアドレス</p>
+      <?php if(isset($error['email'])):?>
+      <p class="error"><?= $error['email'] ?></p>
+      <?php endif?>
+       <input type="email" name="contact[email]" value="<?= isset($email)?$email:null; ?>" /> 
+      <p>本文</p>
+      <?php if(isset($error['body'])):?>
+      <p class="error"><?= $error['body'] ?></p>
+      <?php endif?>
+       <textarea name="contact[body]" cols=50 rows=10 value="<?= isset($body)?$body:null; ?>" ></textarea> <br />
+       <input type="submit" name="confim" />
+      </form>
+     </div><!-- div#mainContents END -->
+     <?php include "common/left.php" ?>
+  </div><!-- div#wrapBox END -->
+</div><!-- div#wrapBg END -->
 
 <?php include "common/footer.php" ?>

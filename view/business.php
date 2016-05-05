@@ -5,21 +5,20 @@
 				<div id="mainContents">
 
 				<a id="pageLink04" name="pageLink04"></a>
-          <p class="chapter8">事業内容</p>
-     <table class="tableDec3">
-            <?php foreach ($data as $v): ?>
-
-           <tr>
-            <th><?php echo $v['business']['name'] ?></th>
-            <td>
-              <?php foreach($v['content'] as $k => $d):?>
-              <?php if($k > 0) echo '<br />' ?>
+          <p class="chapter4">主な事業</p>
+	          <table class="tableDec3">
+						<?php foreach ($data as $v): ?>
+				<tr>
+        <th><p class="chapter16"><?php echo $v['business']['name']?></p></th>
+             <td>
+				     <?php foreach($v['content'] as $k => $d):?>
+               <?php if($k > 0) echo '<br/>' ?>
               <?php echo $d['content'] ?>
-              <?php endforeach ?>
-           </td>
-           </tr>
+             </td>
+								<?php endforeach ?>
+        </tr>
             <?php endforeach ?>
-	 </table>
+	     </table>
 
     </div><!-- div#mainContents END -->
 								<?php include "common/left.php" ?>

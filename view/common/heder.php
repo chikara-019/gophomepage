@@ -17,16 +17,12 @@
 </head>
 
 <body>
-
 	<div id="wrapper">
 		<div id="header" class="clearfix">
-			<h1>CREATIVE SAMPLE.ltd</h1>
 			<ul id="gNavi">
-				<li><a href="/contact" title="">問い合わせページ</a></li>
-				<li><a href="/business" title="">事業内容</a></li>
-				<li><a href="/company" title="">会社概要</a></li>
-				<li><a href="/" title="">TOP PAGE</a></li>
+            	<li><a href="/contact" title="問い合わせページ"><p class="chapter1">問い合わせページ</p></a></li>
+            	<li><a href="/business" title="事業内容"><p class="chapter1">事業内容</p></a></li>
+            	<li><a href="/company" title="企業情報"><p class="chapter1">企業情報</p></a></li>
+            	<li><a href="/" title="HOME"><p class="chapter1">HOME</p></a></li>
 			</ul><!-- ul#gNavi END -->
 		</div><!-- div#header END -->
-		
-		

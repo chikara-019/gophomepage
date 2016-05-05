@@ -5,15 +5,26 @@
 				<div id="mainContents">
 
 				<a id="pageLink04" name="pageLink04"></a>
-				<p class="chapter8">会社概要</p>
-				<table class="tableDec3">
+				<p class="chapter4">会社概要</p>
+		            <table class="tableDec3">
 						<tr>
-                        <th>会社名</th>
-                        <td><?php echo $name ?></td>
-
-
+               <th><p class="chapter16">会社名</p></th>
+                     <td><?php echo $name ?></td>
+　　　　　　　</tr>
+            <tr>
+							  <th><p class="chapter16">本社所在地</p></th>
+                     <td><?php echo $address  ?></td>
+            </tr>
+             <tr>
+                  <th><p class="chapter16">TEL</p></th>
+　　　　　　　　　　　　　　<td><?php echo $tel ?></td>
 						</tr>
-					</table>
+						 <tr>
+							    <th><p class="chapter16">email</p></th>
+                          <td><?php echo $email ?></td>
+						</tr>
+
+            </table>
 
 
 				    </div><!-- div#mainContents END -->

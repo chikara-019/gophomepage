@@ -16,9 +16,15 @@ define("ACTION_DIR", ROOT_DIR.SPR."action");
 define("FUNCTION_DIR", ROOT_DIR.SPR."function");
 define("VIEW_DIR", ROOT_DIR.SPR."view");
 
+//functionファイルは自動読み込み
+if($files = glob(FUNCTION_DIR.SPR.'*.php')){
+    foreach($files as $f){
+        require_once($f);
+    }
+}
 
-include(FUNCTION_DIR.SPR."global.php");
-include(FUNCTION_DIR.SPR."GopDb.php");
-
-
-
+if($files = glob(FUNCTION_DIR.SPR.'*/*.php')){
+    foreach($files as $f){
+        require_once($f);
+    }
+}

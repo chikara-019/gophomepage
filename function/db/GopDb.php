@@ -57,4 +57,15 @@ class GopDb {
     $sth->execute();
     return $sth->fetchAll(PDO::FETCH_ASSOC);
   }
+
+    function saveContact($data) {
+       $sql = 'INSERT INTO `contact`(`title`, `text`, `fromname`, `mail_address`, `created_at`) VALUES (:title,:body,:name,:email,:date)';
+       $sth = $this->con->prepare($sql);
+       $sth->bindParam(':title',$data['title']);
+       $sth->bindParam(':body',$data['body']);
+       $sth->bindParam(':name',$data['name']);
+       $sth->bindParam(':email',$data['email']);
+       $sth->bindParam(':date',date('Y-m-d H:i:s'));
+       return $sth->execute();
+   }
 }
