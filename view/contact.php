@@ -30,7 +30,7 @@
       <?php if(isset($error['body'])):?>
       <p class="error"><?= $error['body'] ?></p>
       <?php endif?>
-       <textarea name="contact[body]" cols=50 rows=10> <?= isset($body)?$body:null; ?> </textarea> <br />
+       <textarea name="contact[body]" cols=50 rows=10><?= isset($body)?$body:null; ?></textarea> <br />
        <input type="submit" name="confim" />
       </form>
      </div><!-- div#mainContents END -->
