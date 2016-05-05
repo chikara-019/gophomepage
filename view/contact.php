@@ -4,9 +4,12 @@
    <div class="wrapBox clearfix">
      <div id="mainContents">
 	  <p class="chapter8">問い合わせページ</p>
+
+
       <?php if(isset($sucsess)):?>
       <p class="sucsess"><?= $sucsess ?></p>
       <?php endif?>
+
       <form method="post" action="/contact">
       <p>お名前</p>
       <?php if(isset($error['name'])):?>
@@ -27,7 +30,7 @@
       <?php if(isset($error['body'])):?>
       <p class="error"><?= $error['body'] ?></p>
       <?php endif?>
-       <textarea name="contact[body]" cols=50 rows=10 value="<?= isset($body)?$body:null; ?>" ></textarea> <br />
+       <textarea name="contact[body]" cols=50 rows=10> <?= isset($body)?$body:null; ?> </textarea> <br />
        <input type="submit" name="confim" />
       </form>
      </div><!-- div#mainContents END -->

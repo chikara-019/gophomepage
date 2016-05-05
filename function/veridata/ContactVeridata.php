@@ -33,7 +33,7 @@ class ContactVeridata extends BaseVeridata
     }
 
     public function name($d) {
-        $k = 'title';
+        $k = 'name';
         //文字数
         if(mb_strlen($d) > $this->name_max){
             $this->_setError($k, 

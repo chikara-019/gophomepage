@@ -9,8 +9,8 @@
       		<table class="tableDec3">
                 <?php foreach($data as $d): ?>
           <tr>
-　　　　　　　　　<p class="chapter18"><?php echo $d['title']?></p>
-　　　    </tr>
+             <p class="chapter18"><?php echo $d['title']?></p>
+         </tr>
                 <?php endforeach ?>
 					</table>
 

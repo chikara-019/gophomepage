@@ -84,3 +84,10 @@ ul#gNavi li.firstItem{
 	padding: 8px;
 	font-family:"lucida grande", tahoma, verdana, arial, sans-serif!important;
 }
+.error{
+    color:red;
+}
+
+.sucsess{
+    color:#9ACD32;
+}

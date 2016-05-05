@@ -18,9 +18,15 @@ function contact_action() {
        } elseif($_POST["commit"]) {
            $db = new GopDb();
            $db->saveContact($_POST["contact"]);
-           $v["sucsess"] = '問い合わせが完了しました。返信には数日頂くことが御座います。';
+           $_SESSION["sucsess"] = '問い合わせが完了しました。返信には数日頂くことが御座います。';
+           header('Location: /contact'); 
        }
 
+    }
+
+    if(isset($_SESSION["sucsess"])){
+       $v["sucsess"] =  $_SESSION["sucsess"];
+       unset($_SESSION["sucsess"]);
     }
 
     return getView($path, $v);
