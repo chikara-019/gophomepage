@@ -3,7 +3,7 @@
 <div id="wrapBg">
    <div class="wrapBox clearfix">
      <div id="mainContents">
-	  <p class="chapter8">問い合わせページ</p>
+      <p class="chapter4">問い合わせページ</p>
 
 
       <?php if(isset($sucsess)):?>

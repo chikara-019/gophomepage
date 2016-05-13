@@ -3,16 +3,17 @@
 <div id="wrapBg">
 			<div class="wrapBox clearfix">
 				<div id="mainContents">
+            <p style="overflow:hidden;height:300px;"><img src="/images/matsudo.jpg" alt="合同会社ジーオーピー" width="700px" /></p>
 
-				<a id="pageLink04" name="pageLink04"></a>
-				   <p class="chapter4">新着ニュース.お知らせ</p>
+			<p class="chapter4">新着ニュース.お知らせ</p>
       		<table class="tableDec3">
                 <?php foreach($data as $d): ?>
-          <tr>
-             <p class="chapter18"><?php echo $d['title']?></p>
-         </tr>
+                  <tr>
+                     <th>[<?php echo date('Y/m',strtotime($d['created_at'])) ?>]<?php echo $d['title']?></th>
+                     <td><?= nl2br($d['body']) ?></td>
+                 </tr>
                 <?php endforeach ?>
-					</table>
+		   </table>
 
           </div><!-- div#mainContents END -->
 

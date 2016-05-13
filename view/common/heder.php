@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>CREATIVE SAMPLE.ltd</title>
+<title>合同会社GOP</title>
 <meta name="keywords" content="キーワード" />
 <meta name="description" content="サイトの説明" />
 <meta http-equiv="Content-Language" content="ja" />
@@ -19,6 +19,10 @@
 <body>
 	<div id="wrapper">
 		<div id="header" class="clearfix">
+           <div id="title">
+           <p>GOP</p>
+           </div>
+
 			<ul id="gNavi">
             	<li><a href="/contact" title="問い合わせページ"><p class="chapter1">問い合わせページ</p></a></li>
             	<li><a href="/business" title="事業内容"><p class="chapter1">事業内容</p></a></li>

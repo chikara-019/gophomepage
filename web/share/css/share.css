@@ -43,6 +43,19 @@
 	text-decoration: underline;
 }
 
+#title {
+    width: 200px;
+    height:50px;
+    overflow: hidden;
+	text-align: left;
+    display:inline-block;
+}
+
+#title p{
+	font-size: 30px;
+	font-weight: bold;
+}
+
 ul#gNavi{
 	width: 600px;
 	text-align: left;

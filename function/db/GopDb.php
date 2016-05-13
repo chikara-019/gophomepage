@@ -27,9 +27,8 @@ class GopDb {
 
 
      function getTopics($sort="created_at") {
-        $sql = 'select * from topics order by :sort ';
+        $sql = 'select * from topics order by '.$sort ;
         $sth = $this->con->prepare($sql);
-        $sth->bindParam(':sort',$sort);
         $sth->execute();
         return $sth->fetchAll(PDO::FETCH_ASSOC);
     }
