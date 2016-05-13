@@ -7,17 +7,18 @@
 				<a id="pageLink04" name="pageLink04"></a>
           <p class="chapter4">主な事業</p>
 	          <table class="tableDec3">
-						<?php foreach ($data as $v): ?>
+	<?php foreach ($data as $v): ?>
 				<tr>
         <th><p class="chapter16"><?php echo $v['business']['name']?></p></th>
+
              <td>
-				     <?php foreach($v['content'] as $k => $d):?>
+		     <?php foreach($v['content'] as $k => $d):?>
                <?php if($k > 0) echo '<br/>' ?>
-              <?php echo $d['content'] ?>
-             </td>
-								<?php endforeach ?>
+               <?php echo $d['content'] ?>
+             <?php endforeach ?>
+            </td>
         </tr>
-            <?php endforeach ?>
+     <?php endforeach ?>
 	     </table>
 
     </div><!-- div#mainContents END -->
