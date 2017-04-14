@@ -9,7 +9,7 @@
                                 <li>
                                     <a href="/">
                                         <i class="ion-ios-home"></i>
-                                        Home
+                                        ホーム
                                     </a>
                                 </li>
                                 <li class="active">Business</li>

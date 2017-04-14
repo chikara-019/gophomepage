@@ -73,7 +73,7 @@
                     
                     <!-- logo -->
                     <div class="navbar-brand">
-                        <a href="/" >GOP</a>
+                        <a href="/" ><img src="/images/logo.jpg" width="80px"></a>
                     </div>
                     <!-- /logo -->
                 </div>
