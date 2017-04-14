@@ -32,6 +32,10 @@ function contact_action() {
        $v["sucsess"] = '問い合わせが完了しました。<br/>返信には数日頂くことが御座います。';
     }
 
+    $db = new GopDb();
+    $data = $db->getCompany();
+    $v['cmp'] = $data;
+
 
     return getView($path, $v);
 
