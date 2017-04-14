@@ -23,11 +23,10 @@
         <section id="feature">
             <div class="container">
                 <div class="section-heading">
-                    <h1 class="title wow fadeInDown" data-wow-delay=".3s">NEWS</h1>
+                    <h1 class="title wow fadeInDown" data-wow-delay=".3s">事業内容</h1>
                 </div>
                 <div class="row">
                     <?php foreach ($data as $v): ?>
-                    	    <?php foreach($v['content'] as $k => $d):?>
                     <div class="col-md-4 col-lg-4 col-xs-12">
                         <div class="media wow fadeInDown animated" data-wow-duration="500ms" data-wow-delay="600ms">
                             <div class="media-left">
@@ -37,11 +36,12 @@
                             </div>
                             <div class="media-body">
                                 <h4 class="media-heading"><?php echo $v['business']['name']?></h4>
-                                <p><?= $d['content'] ?></p>
+                                <?php foreach($v['content'] as $k => $d):?>
+                                  <p><?= $d['content'] ?></p>
+                                <?php endforeach ?>
                             </div>
                         </div>
                     </div>
-                   <?php endforeach ?>
                 <?php endforeach ?>
                </div>
             </div>

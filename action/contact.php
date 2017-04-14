@@ -13,17 +13,11 @@ function contact_action() {
            return getView($path, $v);
        }
 
-       if(isset($_POST["confim"])) {
-           $path = VIEW_DIR.SPR."contact_confim.php";
+       $db = new GopDb();
+       $db->saveContact($_POST["contact"]);
+       mail('info@g-o-p.jp','ホームページ問い合わせ',var_export($_POST,true),'FROM:hossy@g-o-p.jp');
+       header('Location: /contact?s=1'); 
 
-       } elseif(isset($_POST["commit"])) {
-
-           $_SESSION["sucsess"] = 
-
-           $db = new GopDb();
-           $db->saveContact($_POST["contact"]);
-           header('Location: /contact?s=1'); 
-       }
 
     }
 

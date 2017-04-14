@@ -7,7 +7,7 @@
                     <!-- Social Media -->
                     <ul class="social">
                         <li> <a href="https://vary.life/" target="_blink">
-                            VARY
+                            <img src="/images/vary.jpg" alt="転写紙販売VARY" width="60px"/>
                             </a>
                         </li>
                         
