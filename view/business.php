@@ -4,7 +4,7 @@
                 <div class="row">
                     <div class="col-md-12">
                         <div class="block">
-                            <h2>ビジネス</h2>
+                            <h2>事業内容</h2>
                             <ol class="breadcrumb">
                                 <li>
                                     <a href="/">

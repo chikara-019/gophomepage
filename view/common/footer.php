@@ -6,11 +6,9 @@
                 <div class="col-md-4">
                     <!-- Social Media -->
                     <ul class="social">
-                        <li> <a href="https://vary.life/" target="_blink">
-                            <img src="/images/vary.jpg" alt="転写紙販売VARY" width="60px"/>
-                            </a>
+                        <li>
+                          <a href="https://vary.life/" target="_blink">VARY</a>
                         </li>
-                        
                     </ul>
                 </div>
             </div>

@@ -5,7 +5,7 @@
         ================================================== -->
         <meta charset="utf-8">
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-        <link rel="icon" type="image/png" href="images/favicon.png">
+        <link rel="icon" type="image/png" href="images/logo.gif">
         <title>合同会社GOP</title>
         <meta name="description" content="合同会社GOPシステム開発を始めとする様々な事業に取り組んでいます。">
         <meta name="keywords" content="松戸,ホームページ作成,アプリ開発">
@@ -73,7 +73,7 @@
                     
                     <!-- logo -->
                     <div class="navbar-brand">
-                        <a href="/" ><img src="/images/logo.jpg" width="80px"></a>
+                        <a href="/" ><img src="/images/logo.gif" width="80px"></a>
                     </div>
                     <!-- /logo -->
                 </div>

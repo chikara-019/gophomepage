@@ -1,9 +1,10 @@
 <?php
+exit;
 
 	//ここでDBの接続情報を設定する
    define('DB_HOST','localhost');
    define('DB_NAME','gop');
-   define('DB_USER','gop');
+   define('DB_USER','root');
    define('DB_PASS','0000');
 
    define("SPR",DIRECTORY_SEPARATOR);
