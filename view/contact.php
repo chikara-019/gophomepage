@@ -40,7 +40,7 @@
                              <p class="sucsess"><?= $sucsess ?></p>
                              <?php endif?>
                             <div class="contact-form">
-                                <form id="contact-form" method="post" action="/contact" role="form">
+                                <form id="contact-form" method="post" action="/?action=contact" role="form">
                         
                                     <div class="form-group wow fadeInDown" data-wow-duration="500ms" data-wow-delay=".6s">
                                         <?php if(isset($error['name'])):?>
@@ -78,7 +78,7 @@
                                 <?php echo $cmp['name'] ?>  <?php echo $cmp['address'] ?>  <?php echo $cmp['tel'] ?> <?php echo $cmp['email'] ?>
                             </p>
                             <div class="map">
-                                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3236.6138611748706!2d139.8965464156589!3d35.78486048017032!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x601884fcd2f85029%3A0xddf5ccaa79fe2515!2z44CSMjcxLTAwOTEg5Y2D6JGJ55yM5p2-5oi45biC5pys55S677yR77yV4oiS77yW!5e0!3m2!1sja!2sjp!4v1492148891059" width="100%" height="400" frameborder="0" style="border:0" allowfullscreen></iframe>
+                                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3237.020998502281!2d139.91634831642975!3d35.77486053243643!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x60188467d3f0f861%3A0xafc121be4512f389!2z44CSMjcwLTIyMzIg5Y2D6JGJ55yM5p2-5oi45biC5ZKM5ZCN44Kx6LC377yR77yS77yS77yY4oiS77yY!5e0!3m2!1sja!2sjp!4v1532917976439" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
                             </div>
                         </div>
                     </div>

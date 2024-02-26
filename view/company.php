@@ -38,6 +38,10 @@
                                      <td><?php echo $address  ?></td>
                                     </tr>
                                     <tr>
+        		                     <th><p class="chapter16">代表</p></th>
+                                     <td>星 祐介</td>
+                                    </tr>
+                                    <tr>
                                      <th><p class="chapter16">TEL</p></th><td><?php echo $tel ?></td>
 				                    </tr>
                                     <tr>

@@ -1,7 +1,7 @@
 <?php
 
 	 require_once("../init/init.php");
-
+    
      $action= $_GET["action"];
      $file_path = ACTION_DIR."/{$action}.php";
      if(is_file($file_path)) {

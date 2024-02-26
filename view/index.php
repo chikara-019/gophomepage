@@ -40,7 +40,7 @@
                                     </div>
                                 </div>
                                 <div class="media-body">
-                                    <h4 class="media-heading"><?php echo date('Y/m',strtotime($d['created_at'])) ?><?php echo $d['title']?></h4>
+                                    <h4 class="media-heading"><?php echo date('Y/m',strtotime($d['created_at'])) . "<br><br>"?><?php echo $d['title']?></h4>
                                     <p><?= nl2br($d['body']) ?></p>
                                 </div>
                             </div>

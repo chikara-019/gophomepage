@@ -1,0 +1,40 @@
+services:
+  web:
+    build: ./
+    container_name: gophomepage_web
+    tty: true
+    depends_on:
+      - db
+    volumes:
+      - ./web/:/var/www/html
+      - .:/var/www/
+    ports:
+      - 8080:80
+    restart: always
+
+  db:
+    image: mariadb
+    container_name: gophomepage_db
+    restart: always
+    volumes:
+      - ./mysql:/var/lib/mysql
+    ports:
+      - 3307:3306
+    environment:
+      - MYSQL_ROOT_PASSWORD=pass
+      - MYSQL_DATABASE=gop
+      - MYSQL_USER=gop
+      - MYSQL_PASSWORD=0000
+
+  phpMyAdmin:
+    image: phpmyadmin
+    container_name: gophomepage_phpmyadmin
+    depends_on:
+      - db
+    environment:
+      - PMA_ARBITRARY=1
+      - PMA_HOST=db
+      - PMA_USER=root
+      - PMA_PASSWORD=pass
+    ports:
+      - 4040:80

@@ -1,0 +1,159 @@
+-- MySQL dump 10.16  Distrib 10.1.22-MariaDB, for Linux (x86_64)
+--
+-- Host: localhost    Database: gop
+-- ------------------------------------------------------
+-- Server version	10.1.22-MariaDB
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8 */;
+/*!40103 SET @OLD_TIME_ZONE=@@TIME_ZONE */;
+/*!40103 SET TIME_ZONE='+00:00' */;
+/*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
+/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
+/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
+/*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
+
+--
+-- Table structure for table `business`
+--
+
+DROP TABLE IF EXISTS `business`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `business` (
+  `name` varchar(100) NOT NULL,
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `business`
+--
+
+LOCK TABLES `business` WRITE;
+/*!40000 ALTER TABLE `business` DISABLE KEYS */;
+INSERT INTO `business` VALUES ('システム開発事業',1),('やきとり　ごぉっぷ',2),('ネットショッピング事業',3);
+/*!40000 ALTER TABLE `business` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `business_content`
+--
+
+DROP TABLE IF EXISTS `business_content`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `business_content` (
+  `business_id` int(11) NOT NULL,
+  `content` varchar(500) NOT NULL,
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `business_content`
+--
+
+LOCK TABLES `business_content` WRITE;
+/*!40000 ALTER TABLE `business_content` DISABLE KEYS */;
+INSERT INTO `business_content` VALUES (1,'スマートフォンアプリ開発',1),(2,'焼き鳥テイクアウト専門',2),(1,'WEBシステム開発',3),(1,'サーバー保守管理',5),(1,'広告マーケティング',6),(3,'VARY(転写紙販売)',7);
+/*!40000 ALTER TABLE `business_content` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `company`
+--
+
+DROP TABLE IF EXISTS `company`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `company` (
+  `address` varchar(500) NOT NULL,
+  `email` varchar(200) NOT NULL,
+  `tel` varchar(15) NOT NULL,
+  `name` varchar(30) NOT NULL,
+  `created_at` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `updated_at` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `company`
+--
+
+LOCK TABLES `company` WRITE;
+/*!40000 ALTER TABLE `company` DISABLE KEYS */;
+INSERT INTO `company` VALUES ('〒270-2232 千葉県松戸市和名ケ谷1228-8','info@g-o-p.jp','047-369-7673','合同会社　ジーオーピー','2016-04-13 20:16:20','2016-04-13 20:16:20',1);
+/*!40000 ALTER TABLE `company` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `contact`
+--
+
+DROP TABLE IF EXISTS `contact`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `contact` (
+  `title` varchar(30) NOT NULL,
+  `text` varchar(500) NOT NULL,
+  `fromname` varchar(50) NOT NULL,
+  `mail_address` int(11) NOT NULL,
+  `created_at` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=22 DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `contact`
+--
+
+LOCK TABLES `contact` WRITE;
+/*!40000 ALTER TABLE `contact` DISABLE KEYS */;
+INSERT INTO `contact` VALUES ('中山隆久','中山真知子','中山清孝',0,'2016-04-15 15:57:13',1),('hogehgeo','っっっっっっっっっっっっっっっっっっっっっっっっっっっっっっｊ','ほしゆうすけ',0,'2016-05-05 15:04:09',2),('hogehgeo','jjこんにちわ、なにしてるんですか？？？？？？？？？？？？？？？？','ほしゆうすけ',0,'2016-05-05 15:06:02',3),('hogehgeo','jjこんにちわ、なにしてるんですか？？？？？？？？？？？？？？？？','ほしゆうすけ',0,'2016-05-05 15:12:01',4),('星祐介ですよね','     こんんいちうぃわあわわあわわ\r\n\r\n\r\n\r\nよろしくね ','星祐介',0,'2016-05-05 15:12:48',5),('ほしゆうすけ','  ほしゆうすけ\r\nほしゆうすけ\r\nほしゆうすけ\r\nほしゆうすけ\r\n\r\n\r\n\r\n\r\nほしゆうすけ\r\n','ほしゆうすけ',0,'2016-05-05 15:13:37',6),('星ゆうすけ','  じょじょじょほしゆうすけほしゆうすけほしゆうすけほしゆうすけほしゆうすけほしゆうすけほしゆうすけほしゆうすけほしゆうすけほしゆうすけほしゆうすけほしゆうすけほしゆうすけほしゆうすけ','ほし、ゆうすけ',0,'2016-05-05 15:15:05',7),('hosssy!!!!',' フリー\r\n\r\n\r\nワイワイ \r\n\r\nなんてもじを入れればいいですか','星祐介',0,'2016-05-05 15:37:36',8),('kkkkkkkkkkkkkkkkkkkkkkk','    kkkkkkkkkkkkkkkkkkkkkkkkkk','kokokokokokoko',0,'2016-05-05 15:47:04',9),('ffffffffffff',' fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff','fffff',0,'2016-05-05 15:48:24',10),('星星星星星星星星星星星星','  星星星星星星星星星星星星\r\n星星星星星星星星星星星星\r\n星星星星星星星星星星星星\r\n','星祐介',0,'2016-05-05 15:52:34',11),('ゆうすけっっっっｊ','  ゆうすけっっっっｊゆうすけっっっっｊゆうすけっっっっｊゆうすけっっっっｊゆうすけっっっっｊゆうすけっっっっｊゆうすけっっっっｊゆうすけっっっっｊゆうすけっっっっｊゆうすけっっっっｊゆうすけっっっっｊ\r\n\r\n\r\n\r\nゆうすけっっっっｊゆうすけっっっっｊゆうすけっっっっｊ','星星',0,'2016-05-05 15:55:32',12),('ゆうすけっっっっｊ','  ゆうすけっっっっｊゆうすけっっっっｊゆうすけっっっっｊゆうすけっっっっｊゆうすけっっっっｊゆうすけっっっっｊゆうすけっっっっｊゆうすけっっっっｊゆうすけっっっっｊゆうすけっっっっｊゆうすけっっっっｊ\r\n\r\n\r\n\r\nゆうすけっっっっｊゆうすけっっっっｊゆうすけっっっっｊ','星星',0,'2016-05-05 15:57:22',13),('ゆうすけっっっっｊ','  ゆうすけっっっっｊゆうすけっっっっｊゆうすけっっっっｊゆうすけっっっっｊゆうすけっっっっｊゆうすけっっっっｊゆうすけっっっっｊゆうすけっっっっｊゆうすけっっっっｊゆうすけっっっっｊゆうすけっっっっｊ\r\n\r\n\r\n\r\nゆうすけっっっっｊゆうすけっっっっｊゆうすけっっっっｊ','星星',0,'2016-05-05 15:57:42',14),('ゆうすけっっっっｊ','  ゆうすけっっっっｊゆうすけっっっっｊゆうすけっっっっｊゆうすけっっっっｊゆうすけっっっっｊゆうすけっっっっｊゆうすけっっっっｊゆうすけっっっっｊゆうすけっっっっｊゆうすけっっっっｊゆうすけっっっっｊ\r\n\r\n\r\n\r\nゆうすけっっっっｊゆうすけっっっっｊゆうすけっっっっｊ','星星',0,'2016-05-05 15:59:17',15),('ゆうすけっっっっｊ','  ゆうすけっっっっｊゆうすけっっっっｊゆうすけっっっっｊゆうすけっっっっｊゆうすけっっっっｊゆうすけっっっっｊゆうすけっっっっｊゆうすけっっっっｊゆうすけっっっっｊゆうすけっっっっｊゆうすけっっっっｊ\r\n\r\n\r\n\r\nゆうすけっっっっｊゆうすけっっっっｊゆうすけっっっっｊ','星星',0,'2016-05-05 16:02:20',16),('ゆうすけっっっっｊ','  ゆうすけっっっっｊゆうすけっっっっｊゆうすけっっっっｊゆうすけっっっっｊゆうすけっっっっｊゆうすけっっっっｊゆうすけっっっっｊゆうすけっっっっｊゆうすけっっっっｊゆうすけっっっっｊゆうすけっっっっｊ\r\n\r\n\r\n\r\nゆうすけっっっっｊゆうすけっっっっｊゆうすけっっっっｊ','星星',0,'2016-05-05 16:05:13',17),('ゆうすけっっっっｊ','  ゆうすけっっっっｊゆうすけっっっっｊゆうすけっっっっｊゆうすけっっっっｊゆうすけっっっっｊゆうすけっっっっｊゆうすけっっっっｊゆうすけっっっっｊゆうすけっっっっｊゆうすけっっっっｊゆうすけっっっっｊ\r\n\r\n\r\n\r\nゆうすけっっっっｊゆうすけっっっっｊゆうすけっっっっｊ','星星',0,'2016-05-05 16:06:33',18),('ゆうすけっっっっｊ','  ゆうすけっっっっｊゆうすけっっっっｊゆうすけっっっっｊゆうすけっっっっｊゆうすけっっっっｊゆうすけっっっっｊゆうすけっっっっｊゆうすけっっっっｊゆうすけっっっっｊゆうすけっっっっｊゆうすけっっっっｊ\r\n\r\n\r\n\r\nゆうすけっっっっｊゆうすけっっっっｊゆうすけっっっっｊ','星星',0,'2016-05-05 16:07:17',19),('ゆうすけっっっっｊ','  ゆうすけっっっっｊゆうすけっっっっｊゆうすけっっっっｊゆうすけっっっっｊゆうすけっっっっｊゆうすけっっっっｊゆうすけっっっっｊゆうすけっっっっｊゆうすけっっっっｊゆうすけっっっっｊゆうすけっっっっｊ\r\n\r\n\r\n\r\nゆうすけっっっっｊゆうすけっっっっｊゆうすけっっっっｊ','星星',0,'2016-05-05 16:08:19',20),('ご相談＜株式会社ディッジ　石井＞','gop　代表　星様：\r\n\r\nお世話になります。\r\nご無沙汰をしております、石井でございます。頂戴したお名刺のアドレスにも同様のメールをお送りさせていただきましたが、エラーで帰ってきてしまったので、こちらのフォームにメールさせていただきました。\r\n代表の柳との一席以来、ご連絡が大変遅くなってしまい、大変失礼いたしました。\r\n\r\n急ではございますが、星様のお仕事のご状況はいかがでしょう。現在弊社でプロジェクトを進めているゲームのサーバ関連業務でのご相談がございまして、一度弊社までお越しいただけませんでしょうか。\r\n\r\nご多忙とは存じますが、よろしくお願い申し上げます。\r\n','株式会社ディッジ　石井',0,'2016-08-31 23:17:00',21);
+/*!40000 ALTER TABLE `contact` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `topics`
+--
+
+DROP TABLE IF EXISTS `topics`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `topics` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `title` varchar(300) DEFAULT NULL,
+  `body` text,
+  `created_at` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `topics`
+--
+
+LOCK TABLES `topics` WRITE;
+/*!40000 ALTER TABLE `topics` DISABLE KEYS */;
+INSERT INTO `topics` VALUES (1,'合同会社GOP設立','松戸市に子育て世代の人口を増やすを目標に会社を設立','2014-10-01 15:33:33'),(2,'本社を移動','本社を松戸市本町15-6グランシャリオ６Fに移動','2015-07-01 00:00:00'),(3,'やきとり　ごぉっぷ開店','松戸市松飛台２４０−２に\nテイクアウト専門やきとり　ごぉっぷを開店！','2016-05-13 15:50:09'),(4,'<a href=\"https://vary.life\" target=\"_target\">転写紙販売VARYオープン</a>','陶器用の転写紙販売サイトVARYをオープンしました。','2017-04-11 00:00:00');
+/*!40000 ALTER TABLE `topics` ENABLE KEYS */;
+UNLOCK TABLES;
+/*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
+
+/*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
+/*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
+/*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+/*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
+
+-- Dump completed on 2024-02-15 14:21:06

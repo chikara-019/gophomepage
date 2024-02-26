@@ -11,9 +11,13 @@ class GopDb {
         //thisは自分のクライスを呼ぶときに使う
         if($this->con == null){
             try{
-                $this->con = new PDO('mysql:host='.DB_HOST.'; dbname='.DB_NAME.'; charset=utf8',DB_USER, DB_PASS);
+                // $this->con = new PDO('mysql:host='.DB_HOST.'; dbname='.DB_NAME.'; charset=utf8',DB_USER, DB_PASS);
+                $dsn=$dsn = 'mysql:dbname=gop;host=gophomepage_db';
+                $user = 'gop';
+                $pass = '0000';
+                $this->con = new PDO($dsn, $user, $pass);
             } catch(Exception $e) {
-                die('データベースに接続できませんでした。');
+                die('データベースに接続できませんでした。'.$e->getMessage());
             }
         }
     }

@@ -1,7 +1,7 @@
 <?php
 
 	//ここでDBの接続情報を設定する
-   define('DB_HOST','localhost');
+   define('DB_HOST','gophomepage_db');
    define('DB_NAME','gop');
    define('DB_USER','gop');
    define('DB_PASS','0000');
