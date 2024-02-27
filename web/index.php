@@ -4,6 +4,8 @@
     
      $action= $_GET["action"];
      $file_path = ACTION_DIR."/{$action}.php";
+     //var_dump($file_path);
+     //exit;
      if(is_file($file_path)) {
          //ファイルが存在すれば何もしない
 
