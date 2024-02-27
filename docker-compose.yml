@@ -6,8 +6,9 @@ services:
     depends_on:
       - db
     volumes:
-      - ./web/:/var/www/html
       - .:/var/www/
+      - ./etc/apache2/:/etc/apache2/
+
     ports:
       - 8080:80
     restart: always

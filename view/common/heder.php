@@ -84,10 +84,10 @@
                             <li>
                                 <a href="/" >ホーム</a>
                             </li>
-                            <li><a href="/?action=company">企業情報</a></li>
-                            <li><a href="/?action=business">事業内容</a></li>
-                            <li><a href="/?action=contact">問い合わせページ</a></li>
-                            <li><a href="/?action=test">test</a></li>
+                            <li><a href="/company">企業情報</a></li>
+                            <li><a href="/business">事業内容</a></li>
+                            <li><a href="/contact">問い合わせページ</a></li>
+                            <li><a href="/test">test</a></li>
                         </ul>
                     </div>
                 </nav>
