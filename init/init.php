@@ -19,6 +19,8 @@ define("ACTION_DIR", ROOT_DIR.SPR."action");
 define("FUNCTION_DIR", ROOT_DIR.SPR."function");
 define("VIEW_DIR", ROOT_DIR.SPR."view");
 
+define('YOUTUBE_API', 'AIzaSyA4iK1uBZXKiJgxNglJPcM21XGhHCbODXA');
+
 //functionファイルは自動読み込み
 if($files = glob(FUNCTION_DIR.SPR.'*.php')){
     foreach($files as $f){
