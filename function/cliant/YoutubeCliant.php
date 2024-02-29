@@ -79,14 +79,7 @@ class YoutubeCliant{
                 'publishedAt' => $data['published_at'],
 
             ]);
-            /*
-            $data['channel_name'] = $channel_title;
-            $data['title'] = $title;
-            $data['video_id'] = $channel_title;
-            $data['description'] = $description;
-            $data['thumbnail_url'] = $thumbnail_url;
-            $data['publishedAt'] = $published_at;
-            */
+
         }
     }
     
