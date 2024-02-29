@@ -59,40 +59,38 @@ class YoutubeCliant{
     function saveVideos($response, $data) {
 
         foreach($response['items'] as $item){
-            $video_id = $item['id']['videoId'];
-            $title = $item['snippet']['title'];
-            $channel_title = $item['snippet']['channelTitle'];
-            $published_at = date('Y-m-d H:i:s', strtotime($item['snippet']['publishedAt']));
-            $thumbnail_url = $item['snippet']['thumbnails']['medium']['url'];
-            $description = $item['snippet']['description'];
+            $data['video_id'] = $item['id']['videoId'];
+            $data['title'] = $item['snippet']['title'];
+            $data['channel_title'] = $item['snippet']['channelTitle'];
+            $data['published_at'] = date('Y-m-d H:i:s', strtotime($item['snippet']['publishedAt']));
+            $data['thumbnail_url'] = $item['snippet']['thumbnails']['medium']['url'];
+            $data['description'] = $item['snippet']['description'];
 
             //ここで定義した意味がなくなってる
 
-            $sql2 = "INSERT INTO video(id, channel_name, title, video_id, description, thumbnail_url, publishedAt) VALUES(:id, :channel_name, :title, :video_id, :description, :thumbnail_url, :publishedAt)";
-            $sth2 = $this->con->prepare($sql2);
-            $sth2->execute([
-                ':id' => $data['id'],
-                ':channel_name' => $data['channel_name'],
+            $sql = "INSERT INTO video(channel_name, title, video_id, video_url, description, thumbnail_url, publishedAt) VALUES(:channel_name, :title, :video_id, :video_url, :description, :thumbnail_url, :publishedAt)";
+            $sth = $this->con->prepare($sql);
+            $sth->execute([
+                ':channel_name' => $data['channel_title'],
                 ':title' => $data['title'],
                 ':video_id' => $data['video_id'],
                 'description' => $data['description'],
                 'thumbnail_url' =>$data['thumbnail_url'],
-                'publishedAt' => $data['publishedAt'],
+                'publishedAt' => $data['published_at'],
 
             ]);
-
-            $data['id']
-            $data['channel_name']
-            $data['title']
-            $data['video_id']
-            $data['description']
-            $data['thumbnail_url']
-            $data['publishedAt']
-
+            /*
+            $data['channel_name'] = $channel_title;
+            $data['title'] = $title;
+            $data['video_id'] = $channel_title;
+            $data['description'] = $description;
+            $data['thumbnail_url'] = $thumbnail_url;
+            $data['publishedAt'] = $published_at;
+            */
         }
     }
     
-    function getVideo(){
+    function getVideos(){
         $sql = "SELECT * FROM video";
         $sth = $this->con->prepare($sql);
         $sth->execute();

@@ -18,10 +18,15 @@ function test_action(){
     $v['responses'] = $responses;
 
     $db->saveVideos($response, $data);
-    $videos = $db->getVideo();
+    $videos = $db->getVideos();
+    //var_dump($videos);
+    //exit;
 
 
     return getView($path, $v);
+
+    //動画url->https//www.youtube.com/watch?v=$video['id']['videoId']->$data['video_id']
+
     /*
     $data2 = $db->getCurl();
     $v['response'] = $data2;
