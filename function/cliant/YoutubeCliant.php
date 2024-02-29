@@ -3,6 +3,8 @@
 class YoutubeCliant{
     
     public $con = null;
+    public $response;
+
     function __construct(){
 
         if($this->con == null){
@@ -34,66 +36,61 @@ class YoutubeCliant{
         
         //var_dump($sth->fetchAll(PDO::FETCH_ASSOC));
         //exit;
-        $this->channel_list = $sth->fetch(PDO::FETCH_ASSOC);
+        //$this->channel_list = $sth->fetch(PDO::FETCH_ASSOC);//fetch１回の呼び出して１行ずつfetchall１回の呼び出しで全ての行取得
         //var_dump($this->channel_list);
         //exit;
-        return $this->channel_list;
-        //return $sth->fetch(PDO::FETCH_ASSOC);
+        //return $this->channel_list;
+        return $sth->fetchAll(PDO::FETCH_ASSOC);
         
     }
 
-    function getCurl($url){
+    function getCurl($channel_id){
+        $url = 'https://www.googleapis.com/youtube/v3/search?key='. YOUTUBE_API. '&channelId='. $channel_id. '&part=snippet&order=date&maxResults=1&type=video';
         $ch = curl_init($url);
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
         $response = curl_exec($ch);
         curl_close($ch);
-        return $response;       
+        return json_decode($response, true);
     }
 
-    function getVideos($channel_list){
 
-        foreach($this->channel_list as $channel_id){
-            $url = 'https://www.googleapis.com/youtube/v3/search?key='. YOUTUBE_API. '&channelId='. $channel_id. '&part=snippet&order=date&maxResults=1&type=video';
 
-            $response = $this->getCurl($url);
-            $videos = json_decode($response);
-            //var_dump($videos);
-            //exit;
-        }
-    }
-
-    public $response;
     
-    function saveVideos($data){
-
-
+    function saveVideos($response, $data) {
 
         foreach($response['items'] as $item){
-            
             $video_id = $item['id']['videoId'];
             $title = $item['snippet']['title'];
-            $channel_title = $item['snippet']['channel_Title'];
+            $channel_title = $item['snippet']['channelTitle'];
             $published_at = date('Y-m-d H:i:s', strtotime($item['snippet']['publishedAt']));
             $thumbnail_url = $item['snippet']['thumbnails']['medium']['url'];
             $description = $item['snippet']['description'];
-        
-            //$sql2 = "INSERT INTO video(id, title, channel_name, video_id description thumbnail_url publishedAt)VALUES(:id, :title, :channel_name, :video_id, :description, :thumbnail_url, :publishedAt)";
-            $sql2 = "INSERT INTO videos(video_id, title, channel_title, published_at, thumbnail_url, description) VALUES(:video_id, :title, :channel_title, :published_at, :thumbnail_url, :description)";
+
+            //ここで定義した意味がなくなってる
+
+            $sql2 = "INSERT INTO video(id, channel_name, title, video_id, description, thumbnail_url, publishedAt) VALUES(:id, :channel_name, :title, :video_id, :description, :thumbnail_url, :publishedAt)";
             $sth2 = $this->con->prepare($sql2);
             $sth2->execute([
-            ':video_id' => $video_id,
-            ':title' => $title,
-            ':channel_title' => $channel_title,
-            ':published_at' => $published_at,
-            ':thumbnail_url' => $thumbnail_url,
-            ':description' => $description
-            ]);
-        }
+                ':id' => $data['id'],
+                ':channel_name' => $data['channel_name'],
+                ':title' => $data['title'],
+                ':video_id' => $data['video_id'],
+                'description' => $data['description'],
+                'thumbnail_url' =>$data['thumbnail_url'],
+                'publishedAt' => $data['publishedAt'],
 
+            ]);
+
+        }
     }
     
-
-
-
+    function getVideo(){
+        $sql = "SELECT * FROM video";
+        $sth = $this->con->prepare($sql);
+        $sth->execute();
+        $videos = $sth->fetchAll(PDO::FETCH_ASSOC);
+        return $videos;
+    }
+    
 
 }
