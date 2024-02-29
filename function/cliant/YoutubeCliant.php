@@ -81,6 +81,14 @@ class YoutubeCliant{
 
             ]);
 
+            $data['id']
+            $data['channel_name']
+            $data['title']
+            $data['video_id']
+            $data['description']
+            $data['thumbnail_url']
+            $data['publishedAt']
+
         }
     }
     
